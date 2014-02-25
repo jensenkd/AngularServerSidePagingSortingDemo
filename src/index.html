@@ -1,0 +1,36 @@
+﻿<html ng-app="app">
+<head>
+    <title>Sample AngularJS Paging Demo</title>
+    <script type="text/javascript" src="/js/lib/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/lib/angular.js"></script>
+    <script type="text/javascript" src="/js/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script type="text/javascript" src="/js/app/app.js"></script>
+    <script type="text/javascript" src="/js/app/services.js"></script>
+    <script type="text/javascript" src="/js/app/controllers.js"></script>
+    <script type="text/javascript" src="/js/app/directives.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="gridController">
+    <h1>Found ({{customersCount}}) Customers</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th ng-repeat="header in headers">
+                    <sort-by onsort="onSort" sortdir="filterCriteria.sortDir" sortedby="filterCriteria.sortedBy" sortvalue="{{ header.value }}">{{header.title}}</sort-by>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="customer in customers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="align-center">
+        <pagination total-items="customersCount" items-per-page="10" max-size="5" page="filterCriteria.pageNumber" class="" rotate="false" boundary-links="true"
+                    on-select-page="selectPage(page)"></pagination>
+    </div>
+</body>
+</html>

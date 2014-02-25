@@ -1,0 +1,6 @@
+﻿<a ng-click="sort(sortvalue)" style="cursor: pointer;">
+    <span ng-transclude=""></span>
+    <span ng-show="sortedby == sortvalue">
+        <i ng-class="{true: 'glyphicon glyphicon-chevron-up', false: 'glyphicon glyphicon-chevron-down'}[sortdir == 'asc']"></i>
+    </span>
+</a>
