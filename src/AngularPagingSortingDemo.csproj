@@ -135,8 +135,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\FilterCriteria.cs" />
+    <Compile Include="Controllers\Models\Contact.cs" />
+    <Compile Include="Controllers\Models\FilterCriteria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
